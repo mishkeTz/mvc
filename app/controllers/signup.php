@@ -14,4 +14,3 @@ class Signup extends Controller {
         echo "Phone contacts";
     }
 }
-
