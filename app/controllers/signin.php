@@ -11,7 +11,7 @@ class Signin extends Controller {
     
     public function invoke() {
         $result = $this->model->getlogin();
-    
+
         if($result == 'login') {
             header("Location: login/index");
         } 
