@@ -6,9 +6,9 @@ require_once '../app/init.php';
 $app = new App;
 
 //login section
-include_once("../app/controllers/controller.php");
+include_once("../app/controllers/login.php");
 
-$controller = new Controller();
-$controller->invode()
+$controller = new LogIn();
+$controller->invoke();
 
 ?>

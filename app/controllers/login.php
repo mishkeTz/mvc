@@ -1,8 +1,8 @@
 <?php
 
-include_once 'models/Model.php';
+include_once ('models/Login.php');
 
-class Controller {
+class LogIn extends Controller {
     public $model;
 
     public function __construct() {
@@ -12,9 +12,9 @@ class Controller {
         $result = $this->model->getlogin();
     
     if($result == 'login') {
-        include 'views/Afterlogin.php';
+        include 'views/login/Afterlogin.php';
     } else {
-        include 'views/login.php';
+        include 'views/login/login.php';
         }
     }
 }
