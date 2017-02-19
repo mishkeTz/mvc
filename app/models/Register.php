@@ -34,12 +34,12 @@ class Register extends Database
 
 	public function registerUser()
 	{
-		$this->user = $this->db->prepare("
+		$user = $this->db->prepare("
 			INSERT into users
 			VALUES (null, :username, :password, :email)
 		");
 
-		$this->user->execute([
+		$user->execute([
 			'username' 	=> $this->username,
 			'password' 	=> $this->password,
 			'email' 	=> $this->email
