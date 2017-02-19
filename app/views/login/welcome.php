@@ -3,11 +3,6 @@
 
 <body>
 
-<?php 
-
- echo $result;
-
-?>
-
+<p>WELCOME</p>
 </body>
 </html>

@@ -3,10 +3,10 @@
 
 <body>
 <?php 
- echo $result;
+
 
 ?>
-<form action="" method="POST">
+<form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
   <p>
    <label>Username</label>
    <input id="username" value="" name="username" type="text" required="required" /><br>
@@ -19,7 +19,7 @@
   <br />
   <p>
 
-     <button type="submit" class="green big" name="submit"><span>Login</span></button> <button type="reset" class="grey big"><span>Cancle</span></button>
+     <button type="submit" class="green big" name="login_btn"><span>Login</span></button> <button type="reset" class="grey big"><span>Cancle</span></button>
   </p>
  </form>
 
