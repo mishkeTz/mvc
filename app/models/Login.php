@@ -17,6 +17,10 @@ class Login {
     }
     public function getlogin() {
         if(($this->username != null) && ($this->password != null)) {
+<<<<<<< HEAD
+=======
+
+>>>>>>> 2e971fb6e1dea938400247c774b1461efebfb890
             if (($this->username == 'admin') && ($this->password == 'admin')) {
                 return 'login';
             } else {
