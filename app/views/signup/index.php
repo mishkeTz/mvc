@@ -5,7 +5,7 @@
 		<title>Register</title>
 	</head>
 	<body>
-		<form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
+		<form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
 			<label for="username">Username: 
 				<input type="text" name="username" id="username">
 			</label>

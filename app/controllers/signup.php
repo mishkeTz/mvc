@@ -4,7 +4,6 @@ class Signup extends Controller {
     {
     	$model = $this->model("Register");
 
-
         $this->view("signup/index");
     }
 
@@ -14,6 +13,7 @@ class Signup extends Controller {
     	$model = $this->model("Register");
         $this->view("signup/welcome", ["username" => $model->username]);
     }
+
 
 
 }

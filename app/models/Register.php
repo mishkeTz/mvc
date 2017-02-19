@@ -9,19 +9,14 @@ class Register extends Database
 				$email;
 
 	public function __construct($username = null, $password = null, $email = null)
-	{
+	{		
 		$this->db = new Database;
 	
 		$this->username = $username;
 		$this->password = $password;
 		$this->email 	= $email;
 
-		if (isset($_POST['register_btn'])) {
-			$username 	= $_POST['username'];
-			$password 	= $_POST['password'];
-			$email 		= $_POST['email'];
-			
-			}
+		$this->checkUser();
 	}
 
 	public function checkUser()
@@ -45,7 +40,7 @@ class Register extends Database
 			'email' 	=> $this->email
 		]);
 
-		if ($this->user->rowCount() > 0) 
+		if ($user->rowCount() > 0) 
 		{
 			header("Location: signup/welcome");
 		}
