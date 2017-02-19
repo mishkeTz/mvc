@@ -2,9 +2,18 @@
 class Signup extends Controller {
     public function index() 
     {
-    	$register = $this->model('Register');
-        
+    	$model = $this->model("Register");
+
+
         $this->view("signup/index");
     }
+
+
+    public function welcome() 
+    {
+    	$model = $this->model("Register");
+        $this->view("signup/welcome", ["username" => $model->username]);
+    }
+
 
 }

@@ -3,7 +3,7 @@
 
 class Register extends Database
 {
-	protected 	$db,
+	public 		$db,
 				$username,
 				$password,
 				$email;
@@ -16,10 +16,15 @@ class Register extends Database
 		$this->password = $password;
 		$this->email 	= $email;
 
-		$this->checkUser();
+		if (isset($_POST['register_btn'])) {
+			$username 	= $_POST['username'];
+			$password 	= $_POST['password'];
+			$email 		= $_POST['email'];
+			
+			}
 	}
 
-	protected function checkUser()
+	public function checkUser()
 	{
 		if (($this->username != null) && ($this->password != null) && ($this->email) != null)
 		{
@@ -27,7 +32,7 @@ class Register extends Database
 		} 
 	}
 
-	protected function registerUser()
+	public function registerUser()
 	{
 		$this->user = $this->db->prepare("
 			INSERT into users
@@ -42,7 +47,7 @@ class Register extends Database
 
 		if ($this->user->rowCount() > 0) 
 		{
-			header("Location: registered/index");
+			header("Location: signup/welcome");
 		}
 	}
 

@@ -1,1 +1,0 @@
-Uspesno si registrovan!
