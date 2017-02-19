@@ -4,18 +4,16 @@ class Signup extends Controller {
 
     public function index() 
     {
-    	$register = $this->model('Register');
-        
+    	$model = $this->model("Register");
+
+
         $this->view("signup/index");
     }
 
-<<<<<<< HEAD
-}
-
-=======
-    public function phone() 
+    public function welcome() 
     {
-        echo "Phone contacts";
+    	$model = $this->model("Register");
+        $this->view("signup/welcome", ["username" => $model->username]);
     }
+
 }
->>>>>>> 8dd45278608ec159ed56e248d8b776762b83a3bf

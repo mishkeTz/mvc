@@ -4,12 +4,16 @@ class Contact extends Controller {
 
     public function index($email = '') 
     {
-    	$contact = $this->model('Contactus');
-        $this->view("contact/index", ["email" => $contact->email]);
+        $model = $this->model("Contactus");
+
+
+
+        $this->view("contact/index", ["email" => $model->email]);
     }
 
     public function phone() 
     {
-        echo "Phone contacts";
+    	$model = $this->model("Contactus");
+        echo "Phone contacts " . $model->email;
     }
 }
