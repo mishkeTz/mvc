@@ -5,6 +5,9 @@ class Signup extends Controller {
     	$model = $this->model("Register");
 
         $this->view("signup/index");
+
+        
+        }
     }
 
 
