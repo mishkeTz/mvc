@@ -21,7 +21,14 @@ class Signup {
             die();
         }
 
+<<<<<<< HEAD
         $this->controller->view("signup/index");
+=======
+        $this->view("signup/index");
+
+        
+        }
+>>>>>>> e8afe42dead147ebce9c6ac2e077a52e0a5708b0
     }
 
 

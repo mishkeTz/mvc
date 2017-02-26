@@ -5,7 +5,10 @@
 		<title>Register</title>
 	</head>
 	<body>
+<<<<<<< HEAD
 	
+=======
+>>>>>>> e8afe42dead147ebce9c6ac2e077a52e0a5708b0
 		<form action="index" method="post">
 			<label for="username">Username: 
 				<input type="text" name="username" id="username">
