@@ -1,5 +1,7 @@
 <?php
 
+namespace App\Core;
+
 class App {
 
     protected $controller = "home";                                          // OVO ce biti base/default ruta  koju cemo dobiti data pokrenemo bootstrap aplikacije

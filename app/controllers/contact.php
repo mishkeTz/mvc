@@ -1,19 +1,26 @@
 <?php
 
-class Contact extends Controller {
+use App\Core\Controller;
+
+class Contact {
+
+    protected $controller = null;
+
+    public function __construct()
+    {
+        $this->controller = new Controller;
+    }
 
     public function index($email = '') 
     {
-        $model = $this->model("Contactus");
+        $model = $this->controller->model("Contactus");
 
-
-
-        $this->view("contact/index", ["email" => $model->email]);
+        $this->controller->view("contact/index", ["email" => $model->email]);
     }
 
     public function phone() 
     {
-    	$model = $this->model("Contactus");
+    	$model = $this->controller->model("Contactus");
         echo "Phone contacts " . $model->email;
     }
 }

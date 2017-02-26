@@ -1,7 +1,10 @@
 <?php
 
+namespace App\Models;
 
-class Login extends Database 
+use App\Libraries\Database;
+
+class Login
 {
 	public 	$username,
 			$password;

@@ -1,15 +1,17 @@
 <?php
 
-class Home extends Controller {
-    public function index() {
+use App\Core\Controller;
+
+class Home {
+
+    public function index() 
+    {
         echo 'home/index';
     }
 
-public function test() {
-    echo "test";
-    }
-public function ParamProblem($name = '') {
-        $this->model('Users');
+	public function test() 
+	{
+    	echo "test";
     }
 
 /*

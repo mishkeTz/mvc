@@ -1,17 +1,34 @@
 <?php  
-class Signup extends Controller {
+
+use App\Core\Controller;
+
+class Signup {
+
+    protected $controller = null;
+
+    public function __construct()
+    {
+        $this->controller = new Controller;
+    }
+
     public function index() 
     {
-    	$model = $this->model("Register");
+    	$model = $this->controller->model("Register", $_POST);
 
-        $this->view("signup/index");
+        if (isset($_POST['register_btn']))
+        {
+            var_dump($_POST);
+            die();
+        }
+
+        $this->controller->view("signup/index");
     }
 
 
     public function welcome() 
     {
-    	$model = $this->model("Register");
-        $this->view("signup/welcome", ["username" => $model->username]);
+    	$model = $this->controller->model("Register");
+        $this->controller->view("signup/welcome", ["username" => $model->username]);
     }
 
 

@@ -1,20 +1,28 @@
 <?php
-class Signin extends Controller {
+
+use App\Core\Controller;
+
+class Signin {
+
+    protected $controller = null;
+
+    public function __construct()
+    {
+        $this->controller = new Controller;
+    }
 
     public function index()
     {
-        $model = $this->model("Login");
+        $model = $this->controller->model("Login");
 
-        
-
-    	$this->view("signin/index");
+    	$this->controller->view("signin/index");
     }
 
 
     public function welcome()
 
     {
-        $model = $this->model("Login");
-        $this->view("signin/welcome", ["username" => $model->username]);
+        $model = $this->controller->model("Login");
+        $this->controller->view("signin/welcome", ["username" => $model->username]);
     }
 }

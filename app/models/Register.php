@@ -1,17 +1,27 @@
 <?php  
 
+namespace App\Models;
 
-class Register extends Database
+use App\Libraries\Database;
+
+class Register
 {
 	public 		$db,
 				$username,
 				$password,
 				$email;
 
-	public function __construct($username = null, $password = null, $email = null)
+	public function __construct($POST)
 	{		
+
+		if (isset($POST['register_btn']))
+		{
+			var_dump($POST);
+			die();
+		}
+
 		$this->db = new Database;
-	
+
 		$this->username = $username;
 		$this->password = $password;
 		$this->email 	= $email;
