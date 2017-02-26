@@ -1,1 +1,1 @@
-Welcome <?php echo $data['username']; ?>!
+Welcome <?php echo $_POST['username']; ?>!

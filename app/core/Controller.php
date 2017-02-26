@@ -9,14 +9,14 @@ Pravimo metod u base Controller-u klasi  koji ce nam omoguciti da ucitamo modul 
 
     public function view($view, $data = [])
 	{
-		require_once '../app/Views/' . $view . '.php';
+		require_once '../app/views/' . $view . '.php';
 	}
 
 	public function model($model, $post = null)
 	{
-		require_once '../app/Models/' . $model . '.php';
+		require_once '../app/models/' . $model . '.php';
  
-		$class = "\\App\\Models\\" . $model;
+		$class = "\\app\\models\\" . $model;
 
 		return new $class($post);
 	}

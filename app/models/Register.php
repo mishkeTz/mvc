@@ -2,63 +2,47 @@
 
 namespace App\Models;
 
-use App\Libraries\Database;
-
 class Register
 {
-	public 		$db,
-				$username,
-				$password,
-				$email;
+	public $db;
 
-	public function __construct($POST)
+	public function __construct()
 	{		
 
-		if (isset($POST['register_btn']))
+		if (isset($_POST['register_btn']))
 		{
-			var_dump($POST);
-			die();
+			$this->checkUser();
+			echo "__construct";
 		}
 
-		$this->db = new Database;
-
-		$this->username = $username;
-		$this->password = $password;
-		$this->email 	= $email;
-
-		$this->checkUser();
+		
 	}
 
 	public function checkUser()
 	{
-		if (($this->username != null) && ($this->password != null) && ($this->email) != null)
+		if (isset($_POST['username']) & isset($_POST['password']) & isset($_POST['email']))
 		{
 			$this->registerUser();
+			echo "checkUser";
 		} 
 	}
 
 	public function registerUser()
 	{
-		$user = $this->db->prepare("
-			INSERT into users
-			VALUES (null, :username, :password, :email)
-		");
+		$ime = $_POST['username'];
+		$sifra = $_POST['password'];
+		$email = $_POST['email'];
 
-		$user->execute([
-			'username' 	=> $this->username,
-			'password' 	=> $this->password,
-			'email' 	=> $this->email
-		]);
+		$this->db = new \App\Libraries\Database;
 
-		if ($user->rowCount() > 0) 
-		{
-			header("Location: signup/welcome");
-		}
+		$prepare = $this->db->prepare("INSERT INTO users (username, password, email) VALUES (:ime, :sifra, :email)");
+		$prepare->execute(array(
+			":ime" => $ime,
+			":sifra" => $sifra,
+			":email" => $email
+		));
+		
+		echo "registerUser";
 	}
-
-	
-
-
-	
 }
 
